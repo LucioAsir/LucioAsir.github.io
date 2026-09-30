@@ -1,16 +1,496 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal - ASIR</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; color: #333; }
-        h1 { color: #0066cc; }
-    </style>
+  <!-- Theme Adapted for LucioASIR - ASIR Semipresencial -->
+  <title>Lucio Systems | ASIR Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
 </head>
-<body>
-    <h1>¡Bienvenido a mi Web en GitHub Pages!</h1>
-    <p>Práctica de la asignatura de Implementación de Páginas Web - 2º ASIR.</p>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                     
+      </button>
+      <a class="navbar-brand" href="#myPage">Lucio MC 2ºASIR Semi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Lucio Systems</h1> 
+  <p>Infraestructuras TI, Virtualización y Redes Seguras</p> 
+  <form>
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Tu correo electrónico" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Suscribirse</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Container (Sobre mí) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Acerca de Lucio Systems</h2><br>
+      <h4>Estudiante de segundo curso del ciclo formativo de grado superior en Administración de Sistemas Informáticos en Red (ASIR) en el IES Camp de Morvedre.</h4><br>
+      <p>Con amplia experiencia en el sector de las telecomunicaciones y la implantación de equipos críticos, enfoco mis proyectos en la virtualización avanzada con Proxmox VE, el despliegue de contenedores Docker, la administración de sistemas Linux/Windows Server y la gestión eficiente de bases de datos relacionales en PostgreSQL.</p>
+      <br><button class="btn btn-default btn-lg" onclick="location.href='#contact'">Get in Touch</button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Nuestros Valores</h2><br>
+      <h4><strong>MISIÓN:</strong> Garantizar la disponibilidad, rendimiento y seguridad de los servicios informáticos mediante una gestión rigurosa de redes, cortafuegos MikroTik y arquitecturas escalables.</h4><br>
+      <p><strong>VISIÓN:</strong> Consolidarme como un referente en la integración de infraestructuras tecnológicas y automatización de procesos, aplicando buenas prácticas de administración de sistemas y desarrollo backend con Python, FastAPI y bases de datos robustas.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>Áreas de Especialización</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>VIRTUALIZACIÓN</h4>
+      <p>Despliegue y gestión de entornos con Proxmox VE y contenedores Docker.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>REDES Y VLANs</h4>
+      <p>Configuración de enrutamiento y seguridad perimetral con MikroTik.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>SEGURIDAD TI</h4>
+      <p>Hardening de sistemas, túneles SSH y análisis avanzado de tráfico.</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>BASES DE DATOS</h4>
+      <p>Diseño de esquemas y procedimientos almacenados en PostgreSQL.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>AUTOMATIZACIÓN</h4>
+      <p>Desarrollo de scripts en Bash y APIs en Python con FastAPI y Celery.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARDWARE</h4>
+      <p>Montaje de servidores, LVM, RAID 5 y optimización de componentes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>Proyectos de infraestructura y desarrollo</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop" alt="NEXUSSYS" width="400" height="300">
+        <p><strong>NEXUSSYS</strong></p>
+        <p>Simulación integral de empresa IT (Proyecto ASIR)</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop" alt="API Predicción" width="400" height="300">
+        <p><strong>API de Predicción</strong></p>
+        <p>FastAPI, Celery, Redis y PostgreSQL en Docker</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=400&h=300&fit=crop" alt="Conversión 3D" width="400" height="300">
+        <p><strong>Conversión 3D SBS</strong></p>
+        <p>Procesamiento GPU para Meta Quest 3S</p>
+      </div>
+    </div>
+  </div><br>
+  
+  <h2>Lo que opinan sobre el proyecto</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Una infraestructura perfectamente estructurada y documentada para entornos ASIR."<br><span>Lucio Miñano, Administrador de Sistemas</span></h4>
+      </div>
+      <div class="item">
+        <h4>"El despliegue de servicios web y bases de datos relacionales cumple con los más altos estándares."<br><span>Tutor de la Asignatura, IES Camp de Morvedre</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Automatización impecable y rendimiento sobresaliente en los servidores virtuales."<br><span>Compañero de equipo de ASIR</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Pricing</h2>
+    <h4>Planes de alojamiento analizados en la práctica</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Compartido</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>1</strong> Sitio Web</p>
+          <p><strong>1</strong> Dominio Incluido</p>
+          <p><strong>NVMe</strong> Almacenamiento</p>
+          <p><strong>24/7</strong> Soporte Básico</p>
+          <p><strong>Semanal</strong> Copias de Seguridad</p>
+        </div>
+        <div class="panel-footer">
+          <h3>€5</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg" onclick="location.href='#contact'">Seleccionar</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>VPS</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>KVM</strong> Entorno Aislado</p>
+          <p><strong>Root</strong> Acceso Total</p>
+          <p><strong>2</strong> vCores / 4GB RAM</p>
+          <p><strong>SSD</strong> Alto Rendimiento</p>
+          <p><strong>24/7</strong> Monitorización</p>
+        </div>
+        <div class="panel-footer">
+          <h3>€15</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg" onclick="location.href='#contact'">Seleccionar</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Dedicado</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>100%</strong> Hardware Exclusivo</p>
+          <p><strong>Anti-DDoS</strong> Protección</p>
+          <p><strong>Rendimiento</strong> Máximo Bruto</p>
+          <p><strong>Control</strong> Absoluto</p>
+          <p><strong>Soporte</strong> Prioritario</p>
+        </div>
+        <div class="panel-footer">
+          <h3>€59</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg" onclick="location.href='#contact'">Seleccionar</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Ponte en contacto para consultas técnicas o proyectos de sistemas.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> IES Camp de Morvedre (C/ Abogado Fausto Caruana s/n, Puerto de Sagunto, Valencia)</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +34 962 61 77 20</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> 46007748@edu.gva.es</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Mensaje..." rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="./images/mapa.png" class="w3-image w3-greyscale-min" style="width:100%" alt="Ubicación IES Camp de Morvedre">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Lucio Systems - 2º ASIR Semipresencial | IES Camp de Morvedre</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
 </body>
 </html>
